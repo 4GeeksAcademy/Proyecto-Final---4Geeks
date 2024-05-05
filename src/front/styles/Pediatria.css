@@ -1,0 +1,35 @@
+.pediatria-container {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+  .pediatria-container {
+    flex-direction: column; /* Cambia la dirección del flexbox a columna para dispositivos pequeños */
+  }
+}
+.text-black{
+  color:black
+}
+.image-container {
+  flex: 1; /* Ocupa todo el espacio disponible */
+  max-width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+}
+
+.pediatria-image {
+  width: 100%; /* La imagen ocupa todo el ancho disponible del contenedor */
+  height: auto; /* Altura automática para mantener la proporción */
+  border-radius: 10px;
+}
+
+.text-container {
+  flex: 1; /* Ocupa todo el espacio disponible */
+  padding: 0 20px; /* Añade un poco de espacio entre la imagen y el texto */
+}

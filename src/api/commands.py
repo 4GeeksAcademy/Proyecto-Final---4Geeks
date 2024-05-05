@@ -1,6 +1,6 @@
 
 import click
-from api.models import db, User
+from api.models import db, User, Speciality
 
 """
 In this file, you can add as many commands as you want using the @app.cli.command decorator
@@ -14,6 +14,10 @@ def setup_commands(app):
     by typing: $ flask insert-test-users 5
     Note: 5 is the number of users to add
     """
+
+    specialities = [{"name": "Pediatria", "is_active": True}, {"name": "Medicina General", "is_active": True}, {"name": "Psicología", "is_active": True}, {"name": "Dermatología", "is_active": True}, {"name": "Nutrición", "is_active": True}, {"name": "Fisioterapia", "is_active": True}]
+    
+    
     @app.cli.command("insert-test-users") # name of our command
     @click.argument("count") # argument of out command
     def insert_test_users(count):
@@ -29,6 +33,23 @@ def setup_commands(app):
 
         print("All test users created")
 
+    @app.cli.command("insert-specialities")
+    def insert_specialities():
+        print("Creating specialities")
+        for x in range(0, len(specialities)):
+            speciality = Speciality()
+            speciality.name = specialities[x]["name"]
+            speciality.is_active = specialities[x]["is_active"]
+            db.session.add(speciality)
+            db.session.commit()
+            print("Especialidad {} creada!".format(specialities[x]["name"]))
+        print("Todas las especialidades han sido creadas")
+        
+
     @app.cli.command("insert-test-data")
+    def insert_test_data():
+        pass
+
+    @app.cli.command("Speciality")
     def insert_test_data():
         pass

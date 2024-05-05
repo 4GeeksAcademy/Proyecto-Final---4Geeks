@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a MediConecta {{name}}</title>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+            .container-principal {
+                background-image: url("https://images.pexels.com/photos/3873143/pexels-photo-3873143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+                background-size: cover;
+                border-radius: 14px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+            .container-secundario {
+                text-align: center;
+                background: rgba(255, 255, 255, 0.897);
+                border-radius: 14px;
+                border-style: solid;
+                border-color: goldenrod;
+                max-width: 600px;
+                padding: 20px;
+            }
+            h1 {
+                font-family: "Playfair Display", serif;
+                font-weight: 700;
+                margin-top: 0;
+            }
+            h3 {
+                font-family: "Playfair Display", serif;
+                font-weight: 700;
+            }
+            p {
+                font-family: "Manrope", sans-serif;
+                font-weight: 300;
+            }
+        </style>
+</head>
+<body>
+    <div class="container-principal">
+        <div class="container-secundario">
+            <h1>Detalles de la cita médica:</h1>
+            <h3>Paciente: {{patient_name}} {{patient_surname}}</h3>
+            <h3>Ingrese al link a la fecha y hora indicada:</h3>
+            <p>Fecha y Hora: {{appointment_time}}</p>
+            <p>Enlace de la sala de host: {{host_room_url}}</p>
+            <p><strong>Atentamente,</strong></p>
+            <p><strong>Equipo de MediConecta</strong></p>
+        </div>
+    </div>
+</body>
+</html>

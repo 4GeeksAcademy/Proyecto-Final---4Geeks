@@ -3,6 +3,8 @@
 .container {
     max-width: 500px;
     margin: 0 auto;
+    margin-bottom: 45px;
+  
   }
   
   .form-group {
@@ -19,7 +21,7 @@
   }
   
   .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+    background-color: #1eb300;
+    border-color: #8cb300;
   }
   

@@ -1,0 +1,7 @@
+.card-list li {
+    list-style: disc;
+}
+
+.card-list li::marker {
+    color: #5C8692; /* Color de los puntos de la lista */
+}

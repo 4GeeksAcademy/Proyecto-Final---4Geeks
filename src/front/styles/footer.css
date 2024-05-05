@@ -1,34 +1,48 @@
 /* FOOTER.CSS */
 
+
+ 
 .footer {
-    background-color: #1E2C30; 
-    
+    background: linear-gradient(to bottom, #83a8b1, black);
 }
 
-.ftco-heading-2 {
+
+
+.footer-last-div {
+    width: 100%;
+    background-color: #00000000; /* Color de fondo del último div del footer */
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+  }
+/* .ftco-heading-2 {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
+} */
 
- .list-unstyled{
+/* .list-unstyled{
     text-decoration: none;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
  }
 
- .text {
+.text {
     text-align: justify;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
- }
+ } */
 
- a{
+a{
     text-decoration: none;
     color: white;
  }
 
- a:hover{
+a:hover{
     text-decoration: none;
     color: orange;
  }
 
- .footer-social{
+.footer-social{
     justify-content:space-around;
+ } 
+
+ .text{
+    color:#ffff;
  }

@@ -1,0 +1,35 @@
+.texto_ruben {
+  display: flex;
+  justify-content: center;
+  transform: translateY(-50%);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.texto_ruben:hover {
+  transform: rotateX(35deg) translateY(-50%);
+}
+
+.texto_ruben:hover h4:nth-child(odd) {
+  color: #ccc;
+  transform: skewY(15deg);
+}
+
+.texto_ruben:hover h4:nth-child(even) {
+  background-color: #f9f9f9;
+  color: #a6a6a6;
+  transform: skewY(-15deg);
+}
+
+.texto_ruben > h4 {
+  display: block;
+  background-color: #83a8b1;
+  font-weight: bold;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  box-shadow: 0 40px 50px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}

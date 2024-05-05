@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a MediConecta {{name}}</title>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+            .container-principal {
+                background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf8QtWaXtTqTSVf4nqKKMOKgdsYb7tpGp67508p53Ghw&s");
+                background-size: cover;
+                border-radius: 14px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+            .container-secundario {
+                text-align: center;
+                background: rgba(255, 255, 255, 0.897);
+                border-radius: 14px;
+                border-style: solid;
+                border-color: goldenrod;
+                max-width: 600px;
+                padding: 20px;
+            }
+            h1 {
+                font-family: "Playfair Display", serif;
+                font-weight: 700;
+                margin-top: 0;
+            }
+            h3 {
+                font-family: "Playfair Display", serif;
+                font-weight: 700;
+            }
+            p {
+                font-family: "Manrope", sans-serif;
+                font-weight: 300;
+            }
+        </style>
+</head>
+<body>
+    <div class="container-principal">
+        <div class="container-secundario">
+            <h1>Bienvenido a MediConecta</h1>
+            <p>¡Hola {{ name }}!</p>
+            <p>Gracias por unirte a MediConecta, tu centro médico online. Estamos emocionados de tenerte con nosotros y esperamos poder proporcionarte una excelente experiencia en el cuidado de tu salud.</p>
+            <p>En MediConecta, podrás programar citas médicas, consultar a nuestros profesionales de la salud, obtener recetas médicas, y mucho más, todo desde la comodidad de tu hogar.</p>
+            <p>Si tienes alguna pregunta o necesitas asistencia, no dudes en ponerte en contacto con nuestro equipo de soporte. Estamos aquí para ayudarte en todo lo que necesites.</p>
+            <p><strong>¡Bienvenido a MediConecta y que tengas una experiencia de atención médica excepcional!</strong></p>
+            <p><strong>Atentamente,</strong></p>
+            <p><strong>Equipo de MediConecta</strong></p>
+        </div>
+    </div>
+</body>
+</html>

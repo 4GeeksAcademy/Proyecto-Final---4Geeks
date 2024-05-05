@@ -1,1 +1,117 @@
+/* JUMBOTRON */
+
+/*  <uniquifier>: Use a unique and descriptive class name
+    <weight>: Use a value from 200 to 800 
+
+.manrope-<uniquifier> {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 400 to 900
+
+.playfair-display-<uniquifier> {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+*/
+
+.jumbotron {
+    background-image: url('https://i.postimg.cc/LsJtq9nG/fond-Jumbo.jpg');
+    color: white;
+    text-align: center;
+    padding-top: 45px;
+    padding-bottom: 30px;
+}
+
+h1 {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+h2 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h3 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h4 {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.lead{
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 650;
+    font-style: normal;
+ 
+}
+
+p {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.notFound-text{
+  color: #79a8b4;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-size: 150px;
+}
+
+.notFound{
+  background-image: url("https://i.postimg.cc/ry52YpWJ/pastillas.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 30px;
+  padding-top: 70px;
+  background-attachment: fixed;
+}
+
+.btn-primario{
+  background-color:#5C8692;
+  color: #fff;
+  border-color: #7A9CA5;
+}
+
+.btn-secundario{
+  background-color:#fff;
+  color: #5C8692;
+  border-color: #7A9CA5;
+}
+
+
+.dropdown-item-footer{
+  color: white;
+}
+
+.link-document{
+  color:blue
+}
+
+.listDoctor{
+  flex-wrap: wrap;
+}
+ 
 

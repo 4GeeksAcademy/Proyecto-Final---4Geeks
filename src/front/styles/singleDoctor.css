@@ -1,0 +1,17 @@
+.buttons {
+    margin-top: 20px; 
+    display: flex;
+    justify-content: center; 
+    gap: 10px; 
+}
+
+.image-container {
+    flex: 1; 
+    margin-right: 20px;
+    max-width: 50%;
+}
+
+.text-container {
+    flex: 1; 
+    padding: 0 20px; 
+}
