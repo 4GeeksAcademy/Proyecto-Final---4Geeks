@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "@stripe/stripe-js"
+
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
