@@ -10,7 +10,7 @@ export const SingleDoctor = (props) => {
     const [loading, setLoading] = useState(true);
     const [speciality, setSpeciality] = useState(null);
     const [doctor, setDoctor] = useState(null);
-    const [profilePictureUrl, setProfilePictureUrl] = useState(""); 
+    const [profilePictureUrl, setProfilePictureUrl] = useState("");
 
     useEffect(() => {
         // Verificar si el doctor está definido y si tiene un ID antes de realizar la solicitud
@@ -49,11 +49,7 @@ export const SingleDoctor = (props) => {
 
     }, [])
 
-
-
-
     useEffect(() => {
-
         if (id && store.doctors && store.doctors.length > 0) {
             const selectedDoctor = store.doctors.find(doctor => doctor.id.toString() === id);
             if (selectedDoctor) {
@@ -69,8 +65,6 @@ export const SingleDoctor = (props) => {
         }
     }, [id, store.doctors, store.specialities]);
 
-    
-
     if (loading) {
         return <p>Cargando...</p>;
     }
@@ -80,42 +74,38 @@ export const SingleDoctor = (props) => {
     }
 
     return (
-        <>
+        <div className="container-fluid" style={{marginBottom: "15px"}}>
             <div className="jumbotron mb-4">
                 <h1 className="display-4">EQUIPO MÉDICO</h1>
                 <p className="lead">El experto</p>
             </div>
 
-            <div className="container">
-                <div className="d-flex">
-                    <div className="image-container">
-                        <img src={profilePictureUrl} alt="Medicina General" className="medicina-general-image half-size" />
-                    </div>
-                    <div className="text-container">
-                        <h2 className="title">{doctor.name}&nbsp;{doctor.surname}</h2>
-                        <p className="text">
-                            ESPECIALIDAD:&nbsp;{speciality.name}
-                        </p>
-                        <p className="text">
-                            Nº COLEGIADO:&nbsp;{doctor.medical_license}
-                        </p>
-
-                        <p className="text">
-                            BIO:&nbsp;{doctor.bio}
-                        </p>
-                    </div>
+            <div className="row">
+                <div className="col-md-6">
+                    <img src={profilePictureUrl} alt="Medicina General" className="medicina-general-image img-fluid" />
                 </div>
-
-                <div className="buttons d-flex justify-content-center">
-                    <Link to={"/register/medical_appointment"}>
-                        <button className="btn btn-primario">Registrar cita</button>
-                    </Link>
-                    <Link to={"/"}>
-                        <button className="btn btn-secundario" style={{ marginBottom: "5px" }}>Volver a Home</button>
-                    </Link>
+                <div className="col-md-6">
+                    <h2 className="title">{doctor.name}&nbsp;{doctor.surname}</h2>
+                    <p className="text">
+                        ESPECIALIDAD:&nbsp;{speciality.name}
+                    </p>
+                    <p className="text">
+                        Nº COLEGIADO:&nbsp;{doctor.medical_license}
+                    </p>
+                    <p className="text">
+                        BIO:&nbsp;{doctor.bio}
+                    </p>
+                    <div className="buttons d-flex justify-content-center">
+                        <Link to={"/register/medical_appointment"}>
+                            <button className="btn btn-primario">Registrar cita</button>
+                        </Link>
+                        <Link to={"/"}>
+                            <button className="btn btn-secundario">Volver a Inicio</button>
+                        </Link>
+                    </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

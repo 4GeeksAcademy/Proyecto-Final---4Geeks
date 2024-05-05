@@ -36,8 +36,8 @@ export const IsLogin = () => {
 
     return (
         <>
-            <div className="container">
-                <h4>ADVERTENCIA</h4>
+            <div className="container text-center mt-4">
+                <h4 style={{fontWeight: "bold"}}>ADVERTENCIA</h4>
                 <p>Para la correcta funcionalidad de la web, debes tener completo la información del perfil</p>
                 
                 <div className="container-fluid d-flex justify-content-between">

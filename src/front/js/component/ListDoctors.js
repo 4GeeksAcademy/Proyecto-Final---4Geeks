@@ -1,46 +1,39 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import CardDoctor from "./CardDoctor";
 import { useNavigate } from "react-router-dom";
+import "/workspaces/Proyecto-Final---4Geeks/src/front/styles/ListDoctors.css"
 
 const ListDoctors = () => {
-    const { store, actions } = useContext(Context);
+    const { store } = useContext(Context);
     const navigate = useNavigate();
 
-    const handleDoctors = () => {
-        // Redirige al componente Login
+    const handleViewMore = () => {
         navigate('/alldoctors');
-      };
+    };
 
     // Obtener solo los primeros 3 médicos si no se ha hecho clic en "ver más"
     const displayedDoctors = store.doctors.slice(0, 3);
 
     return (
-        <>  
-
-                {displayedDoctors.length > 0 ? (
-                    <>
-                        {displayedDoctors.map(Doctor => (
-                            <CardDoctor 
-                                key={Doctor.id}
-                                id={Doctor.id}
-                                name={Doctor.name}
-                                surname={Doctor.surname}
-                                bio={Doctor.bio}
-                                speciality={Doctor.speciality}
-                            />
-                        ))}
-                        {store.doctors.length > 3 && (
-                            <button className="btn btn-secondary" style={{width:"60%", marginBottom: "14px"}} onClick={handleDoctors}>Accede a ver más doctores</button>
-                        )}
-                    </>
-                ) : (
-                    <p>No hay doctores disponibles.</p>
-                )}
-          
-         
-        </>
+        <div className="list-doctors-container">
+            <div className="doctors-grid">
+                {displayedDoctors.map(doctor => (
+                    <CardDoctor 
+                        key={doctor.id}
+                        id={doctor.id}
+                        name={doctor.name}
+                        surname={doctor.surname}
+                        bio={doctor.bio}
+                        speciality={doctor.speciality}
+                    />
+                ))}
+            </div>
+            {store.doctors.length > 3 && (
+                 <button className="btn btn-secondary" onClick={handleViewMore}>Accede a ver más doctores</button>
+            )}
+        </div>
     );
 };
 
-export default ListDoctors
+export default ListDoctors;

@@ -37,10 +37,10 @@ const Fisioterapia = () => {
         </div>
         <div className="text-container">
           <h2 className="title">Fisioterapia</h2>
-          <p className="text">
+          <p className="text-fisio">
           Bienvenido a MediConecta, donde la salud y el bienestar de nuestros pacientes son nuestra prioridad número uno. En nuestro equipo, contamos con expertos en diversas especialidades médicas.
           </p>
-          <p className="text">
+          <p className="text-fisio">
           Consulta online mediante videollamada (30 – 45 minutos) con un diagnóstico y un diseño de tratamiento basado en ejercicio terapéutico personalizado así como recomendaciones y pautas que seguir en base a su patología actual. Tipos de terapias a realiar:
           </p>
           <ul className="service-list">
@@ -49,7 +49,7 @@ const Fisioterapia = () => {
             <li>Fisioterapia pediatrica</li>
             <li>Rehabilitación</li>
           </ul>
-          <p className="text">
+          <p className="text-fisio">
             En MediConecta, estamos comprometidos a brindar atención médica de alta calidad y accesible a todos. Ya sea que necesites una consulta de rutina, atención preventiva o manejo de una enfermedad crónica, nuestro equipo de Medicina General está aquí para cuidarte. ¡Pide una cita con nosotros hoy mismo y toma el control de tu salud!
           </p>
         </div>

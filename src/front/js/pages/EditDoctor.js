@@ -103,7 +103,7 @@ export const EditDoctor = () => {
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="inputAge" className="form-label">age</label>
+                        <label htmlFor="inputAge" className="form-label">Edad</label>
                         <input type="number" className="form-control" id="inputAge" rows="3" name="age" placeholder="Enter age"
                             onChange={(e) => setEditDoctor({ ...editDoctor, age: e.target.value })}
                             value={editDoctor.age}
