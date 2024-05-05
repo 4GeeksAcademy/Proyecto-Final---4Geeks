@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import paciente2 from "../../img/paciente2.jpg"
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import GetProfilePicture from "../component/ProfilePicture/GetProfilePicture";
 import LoadAttachment from "../component/AttachmentFile/LoadAttachment";
 import ListAppointmentPatient from "../component/Doctors/ListAppointmentPatient";
