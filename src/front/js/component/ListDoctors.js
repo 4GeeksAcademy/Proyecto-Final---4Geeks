@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import CardDoctor from "./CardDoctor";
 import { useNavigate } from "react-router-dom";
-import "/workspaces/Proyecto-Final---4Geeks/src/front/styles/ListDoctors.css"
+import "./../../styles/ListDoctors.css"
 
 const ListDoctors = () => {
     const { store } = useContext(Context);
