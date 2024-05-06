@@ -108,7 +108,7 @@ const PrivateDoctor = (props) => {
             <div className="row mt-3">
                 <div className="col-md-12 text-center">
                    
-                    <Link to={`editDoctor/${id}`}>
+                    <Link to={`/editDoctor/${id}`}>
                         <button className="btn" style={{ backgroundColor: "#5C8692", color: "#fff", transition: "background-color 0.3s", ":hover": { backgroundColor: "#7A9CA5" } }} onMouseEnter={(e) => e.target.style.backgroundColor = "#7A9CA5"} onMouseLeave={(e) => e.target.style.backgroundColor = "#5C8692"}>Editar información <i className="fa-solid fa-pen-to-square" style={{ marginLeft: "5px" }}></i></button>
                     </Link>
                     <Link to={`/changepassword`} className="mx-2">

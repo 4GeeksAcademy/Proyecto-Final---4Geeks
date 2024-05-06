@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import CardDoctor from "./CardDoctor";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 export const AllDoctors =()=> {
     const { store, actions } = useContext(Context);
@@ -47,7 +48,13 @@ Ya sea que necesites una consulta de rutina, tratamiento para una enfermedad esp
                             />
                         ))}
                 </div>
-          </div>
+                <Link to={"/"}>
+                    <div className="d-grid gap-2 col-6 mx-auto text-center pb-5">
+                        <button className="btn btn-primario">Volver a Inicio</button>
+                    </div>
+                </Link>
+            </div>
+
         </>
     );
 };

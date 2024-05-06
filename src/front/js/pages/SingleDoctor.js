@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "./../../styles/singleDoctor.css"; // Importa tu archivo CSS para los estilos personalizados
 
@@ -11,6 +11,7 @@ export const SingleDoctor = (props) => {
     const [speciality, setSpeciality] = useState(null);
     const [doctor, setDoctor] = useState(null);
     const [profilePictureUrl, setProfilePictureUrl] = useState("");
+    const navigate = useNavigate()
 
     useEffect(() => {
         // Verificar si el doctor está definido y si tiene un ID antes de realizar la solicitud
@@ -80,28 +81,26 @@ export const SingleDoctor = (props) => {
                 <p className="lead">El experto</p>
             </div>
 
-            <div className="row">
+            <div className="row justify-content-center">
                 <div className="col-md-6">
                     <img src={profilePictureUrl} alt="Medicina General" className="medicina-general-image img-fluid" />
                 </div>
                 <div className="col-md-6">
                     <h2 className="title">{doctor.name}&nbsp;{doctor.surname}</h2>
-                    <p className="text">
+                    <p className="text-black">
                         ESPECIALIDAD:&nbsp;{speciality.name}
                     </p>
-                    <p className="text">
+                    <p className="text-black">
                         Nº COLEGIADO:&nbsp;{doctor.medical_license}
                     </p>
-                    <p className="text">
+                    <p className="text-black">
                         BIO:&nbsp;{doctor.bio}
                     </p>
                     <div className="buttons d-flex justify-content-center">
                         <Link to={"/register/medical_appointment"}>
                             <button className="btn btn-primario">Registrar cita</button>
                         </Link>
-                        <Link to={"/"}>
-                            <button className="btn btn-secundario">Volver a Inicio</button>
-                        </Link>
+                        <button onClick={()=>{navigate(-1)}} className="btn btn-secundario">Volver</button>
                     </div>
                 </div>
             </div>

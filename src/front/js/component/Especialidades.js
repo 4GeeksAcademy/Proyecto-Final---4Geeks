@@ -32,7 +32,7 @@ const Especialidades = () => {
 
   return (
     <>
-      <div className="texto_ruben d-flex justify-content-center mt-4">
+      <div className="texto_ruben d-flex justify-content-center mt-5">
         {/* <button className="btn btn-outline-secondary" style={{ backgroundColor: "#83a8b1", color: "#fff" }}>Especialidades</button> */}
             {/* <h1 className="t-stroke t-shadow">ESPECIALIDADES</h1> */}
   <h4>E</h4>

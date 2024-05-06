@@ -10,7 +10,7 @@ export const Home = () => {
     <div>
 {/*ESPECIALIDADES*/}
       <section className="bg-light section" id="specialty-section">
-        <div className="row justify-content-center">
+        <div className="row justify-content-center pt-4">
           <Especialidades className="col-md-4" />
         </div>
       </section>

@@ -82,7 +82,7 @@ export const EditDoctor = () => {
                 <form onSubmit={handleSubmit}>
                    
                     <div className="mb-3">
-                        <label htmlFor="inputname" className="form-label">Name</label>
+                        <label htmlFor="inputname" className="form-label">Nombre</label>
                         <input type="text" className="form-control" id="inputname" name="name" placeholder="Name"
                             onChange={(e) => setEditDoctor({ ...editDoctor, name: e.target.value })}
                             value={editDoctor.name}
@@ -96,7 +96,7 @@ export const EditDoctor = () => {
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="inputsurname" className="form-label">surname</label>
+                        <label htmlFor="inputsurname" className="form-label">Apellidos</label>
                         <input type="text" className="form-control" id="inputssurname" name="surname" rows="3" placeholder="Enter surname"
                             onChange={(e) => setEditDoctor({ ...editDoctor, surname: e.target.value })}
                             value={editDoctor.surname}
@@ -131,7 +131,7 @@ export const EditDoctor = () => {
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="inputspeciality" className="form-label">Speciality</label>
+                        <label htmlFor="inputspeciality" className="form-label">Especialidad</label>
                         <select
                             className="form-select"
                             id="inputspeciality"
