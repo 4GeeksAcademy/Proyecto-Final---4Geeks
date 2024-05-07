@@ -247,51 +247,46 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			//<-- PASSWORD
+//<-- PASSWORD
 			recoverPassword: (email, userType) => {
 				const requestOptions = {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify({
-						"email": email,
-						"userType": userType
-					})
+				  method: "POST",
+				  headers: { "Content-Type": "application/json" },
+				  body: JSON.stringify({
+					"email": email,
+					"userType": userType
+				})
 				};
 
 				fetch(process.env.BACKEND_URL + "/send_password", requestOptions)
-					.then((response) => response.text())
-					.then((result) => console.log(result))
-					.catch((error) => console.error(error));
+				  .then((response) => response.text())
+				  .then((result) => console.log(result))
+				  .catch((error) => console.error(error));
 			},
 
-			changePassword: (password, id) => {
-				const userType = localStorage.getItem("userType")
-				const requestOptions = {
-					method: "PUT",
-					body: JSON.stringify({ password }), // Envía los datos como un objeto
-					headers: { "Content-Type": "application/json" },
-				};
-
-				//    console.log("URL:", process.env.BACKEND_URL + `/changepassword/${userType}/${id}`);
-				//    console.log("NUEVA CONTRASEÑA", { password });
-
-				fetch(process.env.BACKEND_URL + `/changepassword/${userType}/${id}`, requestOptions)
-					.then((response) => {
-						if (!response.ok) {
-							throw new Error('Network response was not ok');
-						}
-						return true;
-					})
-					.then((result) => {
-						console.log("Contraseña actualizada exitosamente");
-					})
-					.catch((error) => console.error("Fetch error:", error));
+			changePassword: async (password, id) => {
+				try {
+					const userType = localStorage.getItem("userType");
+					const requestOptions = {
+						method: "PUT",
+						body: JSON.stringify({ password }),
+						headers: { "Content-Type": "application/json" },
+					};
+			
+					const response = await fetch(process.env.BACKEND_URL + `/changepassword/${userType}/${id}`, requestOptions);
+					
+					if (!response.ok) {
+						throw new Error('Network response was not ok');
+					}
+			
+					return true;
+				} catch (error) {
+					throw new Error('Error while changing password: ' + error.message);
+				}
 			},
 
 
-			//<-- PROFILE PICTURE
+//<-- PROFILE PICTURE
 			loadPictures: ()=>{
 				fetch(process.env.BACKEND_URL + "/profilepicture")
 					.then((response) => response.json())

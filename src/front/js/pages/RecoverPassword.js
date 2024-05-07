@@ -5,35 +5,36 @@ import { Context } from "../store/appContext";
 export const RecoverPassword = () => {
     const [email, setEmail] = useState("");
     const [userType, setUserType] = useState("");
-    const [formSubmitted, setFormSubmitted] = useState(false)
+    const [submitted, setSubmitted] = useState(false);
     const navigate = useNavigate();
     const { store, actions } = useContext(Context);
 
-    const handleSubmit =(e)=> {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setFormSubmitted(true); 
-        actions.recoverPassword(email, userType)
-        setTimeout(() => {
-            navigate ("/login")
-        }, 3000);
-    }
+        setSubmitted(true);
+        try {
+            await new Promise((resolve) => setTimeout(resolve, 3000)); // Espera 3 segundos antes de enviar la solicitud
+            await actions.recoverPassword(email, userType);
+            navigate("/login");
+        } catch (error) {
+            console.error("Error al recuperar la contraseña:", error);
+        }
+    };
 
-  
-
-    console.log("EMAIL", email)
-    console.log("USERTYPE", userType)
+    // console.log("EMAIL", email)
+    // console.log("USERTYPE", userType)
     return (
         <>
             <div className="container  " style={{marginTop:"30px"}} >
                 <form onSubmit={handleSubmit }>
                     <div className="mb-3 ">
-                        <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+                        <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
                         <input  type="email"
                             className="form-control"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required/>
-                        <div id="emailHelp" className="form-text">Introduce tu email para que podamos mandarte tu correo.</div>
+                        {/* <div id="emailHelp" className="form-text">Introduce tu email para que podamos mandarte tu correo.</div> */}
                     </div>
                     <div className="form-group">
                       <label>Tipo de Usuario:</label>
@@ -46,14 +47,10 @@ export const RecoverPassword = () => {
                         <option value="doctor">Médico</option>
                       </select>
                     </div>
-                    <button type="submit " className="btn btn-primario">Submit</button>
+                    <button type="submit" className="btn btn-primario">Hecho</button>
+                    {submitted && <p style={{ color: "green" }}>La contraseña se ha enviado con éxito.</p>}
                 </form>
-                {formSubmitted && (
-                        <div className="popup text-center">
-                            <p>¡Password temporal enviado!</p>
-                        </div>
-                    )}
             </div>
         </>
         )
-    }
+    } 
